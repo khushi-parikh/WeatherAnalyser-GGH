@@ -12,8 +12,9 @@ load_dotenv()
 apiKey = os.getenv("API_KEY")
 lat = os.getenv("LAT")
 long = os.getenv("LONG")
+city = os.getenv("CITY")
 
-st.header("Current Weather")
+st.header(f"Current Weather : {city}")
 st.divider()
 
 def extract_current():

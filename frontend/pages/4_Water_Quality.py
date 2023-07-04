@@ -9,7 +9,7 @@ from utils import data_footer
 load_dotenv()
 rootFolder = os.getenv('ROOT')
 
-st.header("Water pollutants over the years")
+st.header("Water pollutants over the years : India")
 
 def water_data_preprocessing(WATER_DATA_URL):
     water_data = pd.read_csv(WATER_DATA_URL, encoding='windows-1252', skiprows=[0], names=['state','district','block','panchayat','village','habitation','pollutant','year'])

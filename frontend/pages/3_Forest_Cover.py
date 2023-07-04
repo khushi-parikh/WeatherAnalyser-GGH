@@ -50,7 +50,7 @@ area_data = pd.merge(area_data, area_df, on="State/UT", how='outer')
 for i in years:
     area_data[i] = area_data[i]/area_data["Area"]
 
-st.header("Forest Cover in India")
+st.header("Forest Cover over the years : India")
 
 map, plots = st.tabs(["Map", "Plots"])
 

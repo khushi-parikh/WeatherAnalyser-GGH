@@ -15,6 +15,8 @@ load_dotenv()
 apiKey = os.getenv("API_KEY")
 lat = os.getenv("LAT")
 long = os.getenv("LONG")
+city = os.getenv("CITY")
+
 
 @st.cache_data
 def extract_current():
@@ -71,7 +73,8 @@ response_history = extract_history()
 air_history_df = air_forecast(response_history)
 
 
-st.header("Current Air Quality Info")
+st.header(f"Current Air Quality Info : {city}")
+st.divider()
 
 current_weather, temp, current_comp =  st.columns([5,2,3])
 with current_weather:
@@ -84,13 +87,13 @@ with current_weather:
         ''', unsafe_allow_html=True)
 
     label = ["Very Low", "Low", "Moderate", "Good", "Very Good"]
-    label.reverse()
     val = [1,1,1,1,1]
 
+    st.write("The higher the AQI, the more air pollution.")
 
     label.append("")
     val.append(sum(val))
-    colors = ['blue', 'green', 'yellow', 'orange', 'red', 'white']
+    colors = ['red', 'orange', 'yellow', 'green', 'blue', 'white']
 
     # plot
     fig = plt.figure(figsize=(4,6), dpi=100)

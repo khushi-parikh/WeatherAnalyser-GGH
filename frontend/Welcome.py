@@ -34,3 +34,4 @@ with inputs:
             long = str(ans["lon"])
             os.environ["LAT"] = lat
             os.environ["LONG"] = long
+            os.environ["CITY"] = ans["name"]
